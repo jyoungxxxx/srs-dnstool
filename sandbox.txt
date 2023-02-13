@@ -1,0 +1,19 @@
+Sandbox file for noting large blocks of code
+
+msgstr_title =
+
+* Encode UTF-8 for JSON imported code for Python v3
+if sys.version_info > (3,):
+    data = data.encode('utf-8')
+
+* Check if user doesn't use the force argument to check the dns IP address, if already exists, pass
+    if not args.force and len(ipslist) == 1:
+        try:
+            dnsaddr = socket.gethostbyname(args.hostname)
+            if ipslist[0] == dnsaddr:
+                msg = '{} already has IP address {}.'.format(args.hostname, dnsaddr)
+                raise Exception(msg)
+        except:
+            pass
+
+*
